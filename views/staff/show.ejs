@@ -1,0 +1,100 @@
+<% layout('layouts/staffportal')%> 
+<div class="row mb-5">
+    <div class="col-md-10 offset-md-1">
+        <div class="d-flex flex-row justify-content-between mb-4">
+            <a href="/bcaa/staffportal" class="btn btn-secondary">
+                Back
+            </a>
+            <div>
+                <% if (office.by === currentUser.section) { %> 
+                    <a href="/bcaa/staffportal/<%= office._id %>/edit" class="btn btn-primary me-3">
+                        Edit
+                    </a>
+                    <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Delete
+                    </a>
+                <% } %> 
+            </div>
+        </div>
+
+            
+        <table class="table table-bordered">
+            <tr>
+                <td class="fw-bold">Title</td>
+                <td><%= office.title %></td>
+            </tr>
+
+            <tr>
+                <td class="fw-bold">Date</td>
+                <td><%= office.postDate %></td>
+            </tr>
+
+            <tr>
+                <td class="fw-bold">Posted By</td>
+                <td><%= office.by %></td>
+            </tr>
+
+            <tr>
+                <td class="fw-bold">Category</td>
+                <td><%= office.category %></td>
+            </tr>
+
+            <% if (office.details) { %>
+                <tr>
+                    <td class="fw-bold">Details</td>
+                    <td><%= office.details %></td>
+                </tr>
+            <% } %> 
+
+            <% if (office.revision) { %>
+                <tr>
+                    <td class="fw-bold">Revision</td>
+                    <td><%= office.revision %></td>
+                </tr>
+            <% } %> 
+
+            <% if (office.attachment) { %>
+                <tr>
+                    <td class="fw-bold">Attachment</td>
+                    <td>
+                        <a href="<%= office.attachment %>" class="btn">
+                            <i class="fa-solid fa-file-pdf fa-xl"></i>
+                        </a>
+                    </td>
+                </tr>
+            <% } %> 
+
+            <% if (office.image) { %>
+                <tr>
+                    <td class="fw-bold">Image</td>
+                    <td>
+                        <a href="<%= office.image %>" class="btn">
+                            <i class="fa-solid fa-image fa-xl"></i>
+                        </a>
+                    </td>
+                </tr>
+            <% } %> 
+        </table>
+
+            
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        Are you sure?
+                        <div class="d-flex flex-row justify-content-center align-items-center mt-3">
+                            <form action="/bcaa/staffportal/<%= office._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn-secondary mx-2">Yes</button>
+                            </form>
+                            <button type="button" class="btn btn-primary mx-2" data-bs-dismiss="modal">No</button>
+                        </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+
+    </div>
+</div>
+
+

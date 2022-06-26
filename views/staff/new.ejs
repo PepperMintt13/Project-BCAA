@@ -1,0 +1,65 @@
+<% layout('layouts/staffportal')%> 
+<!-- dashboard form -->
+<a href="/bcaa/staffportal" class="btn btn-secondary btn mb-2">Back</a>
+<div class="col-md-6 offset-md-3">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <h4 class="text-center mb-5">New Post</h4>
+            <form action="/bcaa/staffportal" method="POST" class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group mb-4 d-flex align-items-center">
+                            <label for="date" class="input-group-text">Post Date</label>
+                            <input type="date" class="form-control" id="date" name="office[postDate]" required>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6">
+                        <div class="input-group mb-4 d-flex align-items-center">
+                            <span for="category" class="input-group-text">Category</span>
+                            <select id="category" class="form-control" name="office[category]">
+                                <option value="News">News</option>
+                                <option value="Annoucement">Annoucement</option>
+                                <option value="Tender">Tender</option>
+                                <option value="Circular">Circular</option>
+                                <option value="Legislation">Legislation</option>
+                                <option value="Requirements">Requirements</option>
+                                <option value="Guidance Materials">Guidance Materials</option>
+                                <option value="Form">Form</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="mb-4">
+                    <label for="title" class="form-label">Post Title</label>
+                    <input type="text" id="title" class="form-control" name="office[title]" required>
+                </div>
+
+                <div class="mb-4" id="revisionDiv">
+                    <label for="revision" class="form-label">Revision (For Legislation, Requirements and Guidance Materials)</label>
+                    <input type="text" id="revision" class="form-control" name="office[revision]">
+                </div>
+        
+                <div class="mb-4">
+                    <label for="details" class="form-label">Post Details</label>
+                    <textarea id="details" class="form-control" id="" cols="30" rows="5" name="office[details]"></textarea>
+                </div>
+        
+                <div class="mb-4">
+                    <label for="image" class="form-label">Image (Optional)</label>
+                    <input type="text" id="image" class="form-control" name="office[image]">
+                </div>
+        
+                <div class="mb-4">
+                    <label for="pdf" class="form-label">PDF (Optional)</label>
+                    <input type="text" id="pdf" class="form-control" name="office[attachment]">
+                </div>
+        
+                <div class="text-center">
+                    <button class="btn btn-primary">Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

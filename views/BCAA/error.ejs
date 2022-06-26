@@ -1,0 +1,17 @@
+<% layout('layouts/staffportal')%> 
+<div class="d-flex flex-column justify-content-center align-items-center">
+    <div class="col-md-6 text-center">
+        <img src="https://cdn.dribbble.com/users/1573719/screenshots/18073295/media/e00e325760322fac4d92d5feef7d2301.png?compress=1&resize=400x300" alt="">
+    </div>
+
+    <div class="col-md-6 text-center">
+        <h3>Oops!</h3>
+        <h1 class="text-primary">Error Code: <%= statusCode %></h1>
+        <h3>Page not found</h3>
+        <p><%= err.message %></p>
+        <div class="mt-4">
+            <a href="/bcaa" class="btn btn-primary mx-2">Home</a>
+            <a href="/bcaa/login" class="btn btn-success mx-2">Login</a>
+        </div>
+    </div>
+</div>

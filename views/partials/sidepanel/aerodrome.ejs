@@ -1,0 +1,24 @@
+<div class="d-none d-lg-block">
+    <div class="d-flex flex-column" id="sidepanel">
+        <a href="/bcaa/aerodrome/personnel" class="default <%- sub_menu === "Personnel" ? "shift": "" %>">Personnel</a>
+        <a href="/bcaa/aerodrome" class="default <%- sub_menu === "Requirements" ? "shift": "" %>">Requirements</a>
+        <a href="/bcaa/aerodrome/guidancematerials" class="default <%- sub_menu === "Guidance Materials" ? "shift": "" %>">Guidance Materials</a>
+        <a href="/bcaa/aerodrome/forms" class="default <%- sub_menu === "Forms" ? "shift": "" %>">Forms</a>
+        <a href="/bcaa/aerodrome/circular" class="default <%- sub_menu === "Circulars" ? "shift": "" %>">Circulars</a>
+    </div>
+</div>
+
+<div class="d-lg-none mb-5">
+    <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= sub_menu %> 
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="dropdownLinks">
+            <li><a href="/bcaa/aerodrome/personnel" class="dropdown-item">Personnel</a></li>
+            <li><a href="/bcaa/aerodrome" class="dropdown-item">Requirements</a></li>
+            <li><a href="/bcaa/aerodrome/guidancematerials" class="dropdown-item">Guidance Materials</a></li>
+            <li><a href="/bcaa/aerodrome/forms" class="dropdown-item">Forms</a></li>
+            <li><a href="/bcaa/aerodrome/circular" class="dropdown-item">Circulars</a></li>
+        </ul>
+      </div>
+</div>

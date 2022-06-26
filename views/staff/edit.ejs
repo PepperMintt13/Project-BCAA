@@ -1,0 +1,65 @@
+<% layout('layouts/staffportal')%>
+<a href="/bcaa/staffportal/<%= office._id %>" class="btn btn-secondary mb-2">Cancel</a>
+<div class="col-md-6 offset-md-3">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="text-center mb-4">Edit Post</h4>
+            <form action="/bcaa/staffportal/<%= office._id %>?_method=PUT" method="POST" class="needs-validation" novalidate>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group mb-4 d-flex align-items-center">
+                            <label for="date" class="input-group-text">Post Date</label>
+                            <input type="date" class="form-control" id="date" name="office[postDate]" value="<%= office.postDate %>" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="input-group mb-4 d-flex align-items-center">
+                            <span for="category" class="input-group-text">Category</span>
+                            <select id="category" class="form-control" name="office[category]">
+                                <option value="News" <%- office.category === "News" ? "Selected" : "" %> >News</option>
+                                <option value="Annoucement" <%- office.category === "Annoucement" ? "Selected" : "" %>>Annoucement</option>
+                                <option value="Tender" <%- office.category === "Tender" ? "Selected" : "" %>>Tender</option>
+                                <option value="Circular" <%- office.category === "Circular" ? "Selected" : "" %>>Circular</option>
+                                <option value="Legislation" <%- office.category === "Legislation" ? "Selected" : "" %>>Legislation</option>
+                                <option value="Requirements" <%- office.category === "Requirements" ? "Selected" : "" %>>Requirements</option>
+                                <option value="Guidance Materials" <%- office.category === "Guidance Materials" ? "Selected" : "" %>>Guidance Materials</option>
+                                <option value="Form" <%- office.category === "Forms" ? "Selected" : "" %>>Form</option>
+                              </select>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="mb-4">
+                    <label for="title" class="form-label">Post Title</label>
+                    <input type="text" id="title" class="form-control" name="office[title]" value="<%= office.title %>" required>
+                </div>
+        
+                <div class="mb-4">
+                    <label for="details" class="form-label">Post Details</label>
+                    <textarea id="details" class="form-control" id="" cols="30" rows="5" name="office[details]"><%= office.details %></textarea>
+                </div>
+        
+                <div class="mb-4">
+                    <label for="image" class="form-label">Image (Optional)</label>
+                    <input type="text" id="image" class="form-control" name="office[image]" value="<%= office.image %>">
+                </div>
+        
+                <div class="mb-4">
+                    <label for="pdf" class="form-label">PDF (Optional)</label>
+                    <input type="text" id="pdf" class="form-control" name="office[attachment]" value="<%= office.attachment %>">
+                </div>
+        
+                <div class="mb-4">
+                    <label for="revision" class="form-label">Revision (Only for Manuals)</label>
+                    <input type="text" id="revision" class="form-control" name="office[revision]" value="<%= office.revision %>">
+                </div>
+        
+                <div class="text-center">
+                    <button class="btn btn-primary">Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<% layout('layouts/aerodrome')%> 
+<% if (manuals) { %>
+    <h2>Bhutan Civil Aviation Requirements</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="table-secondary text-center">
+            <th scope="col">Name</th>
+            <th scope="col">Revision</th>
+            <th scope="col">Date</th>
+            <th scope="col">PDF</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let manual of manuals) { %>
+                <tr>
+                    <td><%= manual.title %></td>
+                    <td><%= manual.revision %></td>
+                    <td><%= manual.postDate %></td>
+                    <td class="d-flex flex-row justify-content-center">
+                        <a href="<%= manual.attachment %>" class="btn btn-secondary btn-sm me-2">
+                            <i class="fa-solid fa-file-pdf fa-xl"></i>
+                        </a>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+<% } %> 
+        
+
+    
